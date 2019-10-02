@@ -2,8 +2,7 @@
 
 **DESCRIÇÃO:** Workspace relacionado aos Projetos de Criados para a semana OmniStack da RocketSeat: `AirCnC`
 
-* **Time:** Luis Garcia
-
+- **Time:** Luis Garcia
 - **Desde:** 30/09/2019
 
 
@@ -13,6 +12,35 @@ Data|Etapa|Descrição
 *30/09/2019*|Configuração do Ambiente|Instalação Node, Yarn, React, Chocolatey
 *01/10/2019*|Criação da API Backend|Construção projeto backend REST com Node
 *02/10/2019*|Criação da Web Page|Construção projeto frontend com React
+
+
+---
+## PLUGINS E ALTERAÇÕES ÚTEIS PARA O VSCODE (IDE)
+
+**Plugins:** 
+
+- Dracula Official (Tema para várias aplicações de desenvolvimento)
+- Material Icon Theme (Icones para classificar cada arquivo ou pasta)
+- Rocketseat React Native, ReactJS (Snippets para React)
+- Color Highlight (Destaque de cor para Editor)
+- Adonis JS (Snippets do Adonis)
+- Bookmarks (Criar índices de linhas importantes)
+- Debugger for Chrome (Permite debugar aplicação)
+- DotENV (Permite estilizar arquivos .env)
+- GitLens (Quando estiver trabalhando com outros devs, pode monitar alteração por linha)
+- Markdown All in One (Snippets de markdown)
+
+**Fonts:**
+
+- Fira Code | Font Ligatures (Ligações de caracteres que formam um símbolo)
+
+**Update Settings VSCode:**
+
+- "editor.fontFamily": "Fira Code"
+- "editor.fontLigatures": true
+- "emmet.syntaxProfiles": { "javascript": "jsx" }
+- "emmet.includeLanguages": { "javascript": "javascriptreact" }
+---
 
 
 ## DETALHAMENTO TÉCNICO
@@ -64,6 +92,7 @@ A proposta do projeto é expor uma Web App integrando com a nossa API já criada
 **STEP 1:** Criar base do projeto com  `React`
 
 - Criar projeto com `yarn create react-app <project>`
+- Importar fonte `Roboto` no `App.css`
 - Configurar sistema de rotas com `react-router-dom`
 - Criar pasta com os assets (estáticos)
 - Criar estrutura de `pages` com index.js e styles.css
