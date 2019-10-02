@@ -39,6 +39,9 @@ A proposta do projeto é expor uma pequena API com serviços para autenticação
 - Criar `Models`
 - Criar `Controllers`
 - Criar config para upload `Multer`
+- Config do `Cors` para acesso local (`yarn add cors`)
+- Criar campo virtual no modelo de Spot para acessar url da imagem
+- Criar rota para acesso ao diretorio fisico de imagens
 
 **STEP 2:** `TO-DO`
 
@@ -51,13 +54,28 @@ A proposta do projeto é expor uma pequena API com serviços para autenticação
 
 Camada|Tecnologias
 ---|---
-Base|![react](https://img.shields.io/badge/react-x-yellow.svg)
-APIs|![to-do](https://img.shields.io/badge/todo-x-blue.svg)
-DevSetup|![setup](https://img.shields.io/badge/repository-git-green.svg) ![setup](https://img.shields.io/badge/ide-visualstudio-green.svg) ![setup](https://img.shields.io/badge/browser-chrome-green.svg)
+Base|![react](https://img.shields.io/badge/react-16.10.1-yellow.svg)
+APIs|![react-router-dom](https://img.shields.io/badge/reactrouterdom-5.1.2-blue.svg) ![axios](https://img.shields.io/badge/axios-0.19.0-blue.svg)
+DevSetup|![git](https://img.shields.io/badge/repository-git-green.svg) ![vscode](https://img.shields.io/badge/ide-vscode-green.svg) ![chrome](https://img.shields.io/badge/browser-chrome-green.svg)
 
 ## Descrição
 A proposta do projeto é expor uma Web App integrando com a nossa API já criada de forma dinâmica e flexível para autenticação, listagem e notificação em *Real-time*.
 
 **STEP 1:** Criar base do projeto com  `React`
 
-- `TO-DO`
+- Criar projeto com `yarn create react-app <project>`
+- Configurar sistema de rotas com `react-router-dom`
+- Criar pasta com os assets (estáticos)
+- Criar estrutura de `pages` com index.js e styles.css
+- Criar paginas de Login, Dashboard e Spot
+- Importar `axios` para acesso API do backend
+- Configurar acesso serviço: `api` (pasta services)
+- No Login, settar o `id` usuário no `LocalStorage`
+- Criar função `handle` para lidar com ações em tela
+- Manipular estado do objeto com `useState`
+- Lembrar de passar o `history` como parâmetro da página, para que possa fazer a navegação de rotas
+- Usar o `useEffect` quando precisar carregar componente com dados prévios (First Load)
+- Usar o `Link` para navegar entre rotas de forma menos burocrática
+- Usar o `useMemo` para preview da imagem (Listener)
+
+**STEP 2:** `TO-DO`
