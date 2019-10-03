@@ -11,7 +11,9 @@ Data|Etapa|Descrição
 ---|---|---
 *30/09/2019*|Configuração do Ambiente|Instalação Node, Yarn, React, Chocolatey
 *01/10/2019*|Criação da API Backend|Construção projeto backend REST com Node
-*02/10/2019*|Criação da Web Page|Construção projeto frontend com React
+*02/10/2019*|Criação da Web App|Construção projeto frontend com React
+*03/10/2019*|Criação da Mobile App|Construção projeto mobile com ReactNative
+*03/10/2019*|Funcionalidades Avançadas|Melhorias com WebSocket e notificações
 
 
 ---
@@ -106,5 +108,46 @@ A proposta do projeto é expor uma Web App integrando com a nossa API já criada
 - Usar o `useEffect` quando precisar carregar componente com dados prévios (First Load)
 - Usar o `Link` para navegar entre rotas de forma menos burocrática
 - Usar o `useMemo` para preview da imagem (Listener)
+
+**STEP 2:** `TO-DO`
+
+---
+## 3. Mobile ![project version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)
+---
+
+## Estrutura do Projeto
+
+Camada|Tecnologias
+---|---
+Base|![react](https://img.shields.io/badge/react-16.8.3-yellow.svg) ![react-native](https://img.shields.io/badge/reactnativedsk-35.0.0-yellow.svg)
+APIs|![react-dom](https://img.shields.io/badge/reactdom-16.8.3-blue.svg) ![react-native-web](https://img.shields.io/badge/reactnativeweb-0.11.7-blue.svg) ![babel-preset-expo](https://img.shields.io/badge/babelpresentexpo-7.0.0-blue.svg) ![react-navigation](https://img.shields.io/badge/reactnavigation-4.0.10-blue.svg) ![axios](https://img.shields.io/badge/axios-0.19.0-blue.svg)
+Cli | ![expo](https://img.shields.io/badge/expo-35.0.0-red.svg)
+DevSetup|![git](https://img.shields.io/badge/repository-git-green.svg) ![vscode](https://img.shields.io/badge/ide-vscode-green.svg) ![genymotion](https://img.shields.io/badge/emulador-genymotion-green.svg)
+
+## Descrição
+A proposta do projeto é expor uma Mobile App integrando com a nossa API já criada de forma dinâmica e flexível para autenticação, listagem e notificação em *Real-time*.
+
+**STEP 1:** Criar base do projeto com  `ReactNative`
+
+- Instalar ExpoCli para criação do projeto `npm install -g expo-cli`
+- Instalar Expo Client no celular (para emular)
+- Criar projeto com `expo init <project>`
+- Iniciar projeto com `yarn start`
+- Iniciar emulador `genymotion` ou usando expo client `exp://192.168.0.12` (ipv4 address)
+- Criar estrutura de pastas `src`
+- Criar `src/pages` as paginas do app `Login, Dashboard, Book`
+- Criar sistema de rotas com `react-navigation`
+- Fix da lib gesture-handler `expo install react-native-gesture-handler react-native-reanimated`
+- Criar tela de `Login` com as labels e campos
+- Alterar `View` padrão para `KeyboardAvoidingView` desta forma o teclado não sobrescreve os campos
+- Criar botão utilizando `TouchableOpacity`
+- Importar `axios` para acesso API do backend
+- Configurar acesso serviço: `api` (pasta services)
+- Criar função `handle` para lidar com ações em tela
+- Manipular estado do objeto com `useState`
+- Atribuir input do formulário ao seu state `onChangeText={<method>}`
+- No Login, settar o `id` e `techs` no `AsyncStorage`
+- Lembrar de passar o `navigation` como parâmetro da página, para que possa fazer a navegação de rotas
+- Usar o `useEffect` quando precisar carregar componente com dados prévios (First Load)
 
 **STEP 2:** `TO-DO`
