@@ -25,6 +25,13 @@ module.exports = {
 
     await booking.populate('spot').populate('user').execPopulate();
 
+    // Send notification when a book is required
+    req.cachedUsers.get(JSON.stringify(booking.spot.user), (err, ownerSocket) => { 
+      if (ownerSocket) {
+        req.io.to(ownerSocket).emit('booking_request', booking);
+      }
+    });
+
     return res.json(booking);
   }
 

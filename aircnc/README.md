@@ -5,7 +5,6 @@
 - **Time:** Luis Garcia
 - **Desde:** 30/09/2019
 
-
 ## FASES DO PROJETO
 Data|Etapa|Descrição
 ---|---|---
@@ -13,8 +12,7 @@ Data|Etapa|Descrição
 *01/10/2019*|Criação da API Backend|Construção projeto backend REST com Node
 *02/10/2019*|Criação da Web App|Construção projeto frontend com React
 *03/10/2019*|Criação da Mobile App|Construção projeto mobile com ReactNative
-*03/10/2019*|Funcionalidades Avançadas|Melhorias com WebSocket e notificações
-
+*04/10/2019*|Funcionalidades Avançadas|Melhorias com WebSocket e notificações
 
 ---
 ## PLUGINS E ALTERAÇÕES ÚTEIS PARA O VSCODE (IDE)
@@ -31,6 +29,7 @@ Data|Etapa|Descrição
 - DotENV (Permite estilizar arquivos .env)
 - GitLens (Quando estiver trabalhando com outros devs, pode monitar alteração por linha)
 - Markdown All in One (Snippets de markdown)
+- ESLint para boas praticas de código
 
 **Fonts:**
 
@@ -43,7 +42,6 @@ Data|Etapa|Descrição
 - "emmet.syntaxProfiles": { "javascript": "jsx" }
 - "emmet.includeLanguages": { "javascript": "javascriptreact" }
 ---
-
 
 ## DETALHAMENTO TÉCNICO
 
@@ -73,8 +71,17 @@ A proposta do projeto é expor uma pequena API com serviços para autenticação
 - Criar campo virtual no modelo de Spot para acessar url da imagem
 - Criar rota para acesso ao diretorio fisico de imagens
 
-**STEP 2:** `TO-DO`
+**STEP 2:** Criar camada de notificação em real-time com `socket.io`
 
+- Add dependencia no projeto `yarn add socket.io`
+- Importar `socketio` no `server.js`
+- Configurar servidor para servir `http` e `websocket`
+- Add `redis` para armazenar usuários
+- Utilizar `socket.handshake.query` para recuperar dados do uauário passado pelo Socket
+- Disponibilizar objeto do socket na requisição
+- Emitir atualização do objeto na requisição de `Booking`
+- Emitir atualização do objeto na requisição de `Approval`
+- Emitir atualização do objeto na requisição de `Reject`
 
 ---
 ## 2. Frontend ![project version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)
@@ -109,7 +116,12 @@ A proposta do projeto é expor uma Web App integrando com a nossa API já criada
 - Usar o `Link` para navegar entre rotas de forma menos burocrática
 - Usar o `useMemo` para preview da imagem (Listener)
 
-**STEP 2:** `TO-DO`
+**STEP 2:** Criar camada de notificação em real-time com `socket.io-client`
+
+- Add dependencia no projeto `yarn add socket.io-client`
+- Implementar na tela de Dashboard (notificações) o listener do socket
+- Criar um `useEffect` para fazer conexão com o Socket
+- Passar dados do usuário ao conectar com Socket via `query`
 
 ---
 ## 3. Mobile ![project version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)
@@ -150,4 +162,11 @@ A proposta do projeto é expor uma Mobile App integrando com a nossa API já cri
 - Lembrar de passar o `navigation` como parâmetro da página, para que possa fazer a navegação de rotas
 - Usar o `useEffect` quando precisar carregar componente com dados prévios (First Load)
 
-**STEP 2:** `TO-DO`
+**STEP 2:** Criar camada de notificação em real-time com `socket.io-client`
+
+- Add dependencia no projeto `yarn add socket.io-client`
+- Implementar na tela de Dashboard (notificações) o listener do socket
+- Criar um `useEffect` para fazer conexão com o Socket
+- Passar dados do usuário ao conectar com Socket via `query`
+- Emitir `Alert` ao receber resposta do `socket`
+- Remover warnings do `YellowBox` no `App.js` 

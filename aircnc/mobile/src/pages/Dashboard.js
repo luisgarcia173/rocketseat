@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, ScrollView, AsyncStorage, Image, SafeAreaView } from 'react-native';
+import socketio from 'socket.io-client';
+import { StyleSheet, ScrollView, AsyncStorage, Image, SafeAreaView, Alert } from 'react-native';
 
 import SpotList from '../components/SpotList';
 
@@ -8,6 +9,18 @@ import logo from '../assets/logo.png';
 export default function Dashboard({ navigation }) {
 
   const [techs, setTechs] = useState([]);
+
+  useEffect(() => {
+    AsyncStorage.getItem('user').then(user_id => {
+      const socket = socketio('http://192.168.0.12:3333', {
+        query: { user_id }
+      });
+
+      socket.on('booking_response', booking => {
+        Alert.alert(`Sua reserva em ${booking.spot.company} em ${booking.date} foi ${booking.approved ? 'APRROVADA' : 'REJEITADA'}`);
+      });
+    });
+  }, []);
 
   useEffect(() => {
     AsyncStorage.getItem('techs').then(storagedTechs => {
